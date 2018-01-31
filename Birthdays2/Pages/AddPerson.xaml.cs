@@ -35,8 +35,9 @@ namespace Birthdays2
                 bool nameExists = ListCat.checkIfNameExists(name);
                 if(nameExists)
                 {
-                    text1.Text = "Name already exists.";
+                    text1.Text = "";
                     text2.Text = "";
+                    MessageBoxResult nameTaken = MessageBox.Show("Name already exists.", "Error", MessageBoxButton.OK);
                 }
                 else
                 {

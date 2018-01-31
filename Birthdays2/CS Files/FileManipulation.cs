@@ -43,5 +43,29 @@ namespace Birthdays2
             file.WriteLine(input);
             file.Close();
         }
+        public static void RemovePerson(string name) //Need error checking preventing remove person from being used if the file is empty
+        {
+            List<Person> personList = ListCat.CreatePersonList();
+            int len = personList.Count;
+            int i = 0;
+            string[] newFileContent = new string[len+1];
+            string[] fileContent = ReadFile();
+            foreach(string line in fileContent)
+            {
+                string[] temp = new string[2];
+                temp = line.Split(',');
+                if(temp[0] != name)
+                {
+                    newFileContent[i] = line;
+                    i++;
+                }
+            }
+            File.Delete(GetFilePath());
+            CreateFile();
+            foreach(string line in newFileContent)
+            {
+                WriteToFile(line);
+            }
+        }
     }
 }

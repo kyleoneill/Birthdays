@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\kyleo\Documents\Visual Studio 2017\Projects\Birthdays2\Birthdays2\App.xaml
-4-1616585153
+5167393489
 
-12-1015968450
+131436925868
 131569487696
-AddPerson.xaml;BirthdayHome.xaml;MainWindow.xaml;ViewBirthdays.xaml;
+Pages\AddPerson.xaml;BirthdayHome.xaml;MainWindow.xaml;Pages\RemovePerson.xaml;Pages\ViewBirthdays.xaml;
 
 False
 

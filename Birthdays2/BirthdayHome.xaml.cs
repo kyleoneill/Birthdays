@@ -27,17 +27,17 @@ namespace Birthdays2
 
         private void button1_click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("ViewBirthdays.xaml", UriKind.Relative));
+            this.NavigationService.Navigate(new Uri(@"/Pages/ViewBirthdays.xaml", UriKind.Relative));
         }
 
         private void button2_click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("AddPerson.xaml", UriKind.Relative));
+            this.NavigationService.Navigate(new Uri(@"/Pages/AddPerson.xaml", UriKind.Relative));
         }
 
         private void button3_click(object sender, RoutedEventArgs e)
         {
-
+            this.NavigationService.Navigate(new Uri(@"/Pages/RemovePerson.xaml", UriKind.Relative));
         }
     }
 }

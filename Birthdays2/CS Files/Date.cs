@@ -39,18 +39,18 @@ namespace Birthdays2
             {
                 if (birthdayPassed)
                 {
-                    textbox.Text += name + "\'s birthday is " + bMonth + "/" + bDay + ", which was " + (daysUntilBirthday * -1) + " days ago.";
+                    textbox.Text += name + "\'s birthday is " + bMonth + "/" + bDay + ", which was " + (daysUntilBirthday * -1) + " days ago." + "\n";
                 }
                 else
                 {
-                    textbox.Text += name + "\'s birthday is " + bMonth + "/" + bDay + ", which is " + daysUntilBirthday + " days away.";
+                    textbox.Text += name + "\'s birthday is " + bMonth + "/" + bDay + ", which is " + daysUntilBirthday + " days away." + "\n";
                 }
             }
             else if (bMonth == (currentMonth + 1))
             {
                 int daysLeftInMonth = MaxDaysInMonth(currentMonth) - currentDay;
                 int daysUntilFutureBirthday = daysLeftInMonth + bDay;
-                textbox.Text += name + "\'s birthday is " + bMonth + "/" + bDay + ", which is " + daysUntilFutureBirthday + " days away.";
+                textbox.Text += name + "\'s birthday is " + bMonth + "/" + bDay + ", which is " + daysUntilFutureBirthday + " days away." + "\n";
             }
         }
     }

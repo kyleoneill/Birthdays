@@ -10,7 +10,7 @@
 
     <Grid Margin="0,0,10,10">
         <Grid.Background>
-            <ImageBrush ImageSource="birthday.jpg"/>
+            <ImageBrush ImageSource="../birthday.jpg"/>
         </Grid.Background>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Person to Add:" VerticalAlignment="Top" Margin="804,379,0,0" Height="30" Width="135" FontSize="20"/>
         <TextBox x:Name="text1" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="298" Margin="944,379,0,0" FontSize="18" Text="{Binding SearchCriteria}">

@@ -10,8 +10,8 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="birthday.jpg"/>
+            <ImageBrush ImageSource="../birthday.jpg"/>
         </Grid.Background>
-        <TextBox x:Name="textbox1" HorizontalAlignment="Left" Height="622" Margin="802,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="468"/>
+        <TextBox x:Name="textbox1" HorizontalAlignment="Left" Height="622" Margin="802,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="468" IsReadOnly="True"/>
     </Grid>
 </Page>
