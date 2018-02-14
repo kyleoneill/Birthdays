@@ -20,3 +20,4 @@ C:\Users\kyleo\Documents\Visual Studio 2017\Projects\Birthdays2\Birthdays2\obj\D
 C:\Users\kyleo\Documents\Visual Studio 2017\Projects\Birthdays2\Birthdays2\obj\Debug\Pages\AddPerson.baml
 C:\Users\kyleo\Documents\Visual Studio 2017\Projects\Birthdays2\Birthdays2\obj\Debug\Pages\RemovePerson.baml
 C:\Users\kyleo\Documents\Visual Studio 2017\Projects\Birthdays2\Birthdays2\obj\Debug\Pages\ViewBirthdays.baml
+C:\Users\kyleo\Documents\Visual Studio 2017\Projects\Birthdays2\Birthdays2\obj\Debug\Birthdays2.csprojResolveAssemblyReference.cache
