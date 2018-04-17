@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\kyleo\Documents\Visual Studio 2017\Projects\Birthdays2\Birthdays2\obj\Debug\
+C:\Users\kyleo\source\repos\Birthdays\Birthdays2\obj\Debug\
 Birthdays2
 none
 false
 DEBUG;TRACE
-C:\Users\kyleo\Documents\Visual Studio 2017\Projects\Birthdays2\Birthdays2\App.xaml
+C:\Users\kyleo\source\repos\Birthdays\Birthdays2\App.xaml
 5167393489
 
 131436925868
-131569487696
+14434534373
 Pages\AddPerson.xaml;BirthdayHome.xaml;MainWindow.xaml;Pages\RemovePerson.xaml;Pages\ViewBirthdays.xaml;
 
 False
