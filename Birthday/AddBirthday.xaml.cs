@@ -36,5 +36,10 @@ namespace Birthday
         {
             this.Frame.Navigate(typeof(MainPage));
         }
+
+        private void AddData(object sender, RoutedEventArgs e)
+        {
+            DataAccess.AddPerson(Input_Name.Text, DateTime.Parse(Input_Date.Text));
+        }
     }
 }
