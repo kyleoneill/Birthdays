@@ -137,6 +137,7 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <None Include="Birthday_TemporaryKey.pfx" />
+    <None Include="readme.md" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\Default.rd.xml" />

@@ -39,7 +39,12 @@ namespace Birthday
 
         private void AddData(object sender, RoutedEventArgs e)
         {
-            DataAccess.AddPerson(Input_Name.Text, DateTime.Parse(Input_Date.Text));
+            if(Input_Name.Text != "" && Input_Date.Text != "")
+            {
+                DataAccess.AddPerson(Input_Name.Text, DateTime.Parse(Input_Date.Text));
+                Input_Name.Text = "";
+                Input_Date.Text = "";
+            }
         }
     }
 }

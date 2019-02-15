@@ -34,7 +34,9 @@ namespace Birthday
                 };
 
                 string sqliteBirthday = birthday.Year + "-" + birthday.Month + "-" + birthday.Day + " 00:00:00";
-                insertCommand.CommandText = "INSERT INTO birthdayTable (name, birthday) VALUES(" + name + ", " + sqliteBirthday + ");";
+                insertCommand.CommandText = "INSERT INTO birthdayTable (name, birthday) VALUES($name, $date);";
+                insertCommand.Parameters.AddWithValue("$name", name);
+                insertCommand.Parameters.AddWithValue("$date", sqliteBirthday);
                 insertCommand.ExecuteReader();
                 db.Close();
             }
@@ -57,7 +59,8 @@ namespace Birthday
                 SqliteDataReader query = selectCommand.ExecuteReader();
                 while (query.Read())
                 {
-                    entries.Add(new Person {Name=query.GetString(0), Birthday=query.GetDateTime(1)});
+                    string date = query.GetDateTime(1).ToString("MM/dd/yyyy");
+                    entries.Add(new Person {Name=query.GetString(0), DateTimeBirthday=query.GetDateTime(1) , StringBirthday=date});
                 }
                 db.Close();
             }

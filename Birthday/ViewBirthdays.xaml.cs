@@ -25,7 +25,8 @@ namespace Birthday
         public ViewBirthdays()
         {
             this.InitializeComponent();
-            Output.ItemsSource = DataAccess.GetPeople();
+            var personList = DataAccess.GetPeople();
+            Output.ItemsSource = personList;
         }
 
         private void HyperlinkButton_Click(object sender, RoutedEventArgs e)

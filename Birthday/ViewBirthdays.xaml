@@ -12,13 +12,14 @@
         <TextBlock x:Name="pageTitle" Text="Birthdays" FontSize="40px" HorizontalAlignment="Center" Margin="0,30,0,-30"/>
         <HyperlinkButton Content="Add a Birthday" Click="HyperlinkButton_Click" FontSize="25px" HorizontalAlignment="Left" Margin="60,175,0,0" VerticalAlignment="Top" />
         <HyperlinkButton Content="Main Page" Click="HyperlinkButton_Click_1" FontSize="25px" HorizontalAlignment="Left" Margin="60,100,0,0" VerticalAlignment="Top" />
-        <ListView Name="Output">
+        <TextBlock Text="Birthdays" HorizontalAlignment="Center" Margin="0, 125, 0, 0"/>
+        <ListView Name="Output" Margin="300,150,250,150" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
-                        <StackPanel Grid.Column="1" VerticalAlignment="Top" Margin="10,0,0,0">
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center">
                             <TextBlock Text="{Binding Name}"/>
-                            <TextBlock Text="{Binding Birthday}"/>
+                            <TextBlock Text="{Binding StringBirthday}"/>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>

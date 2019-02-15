@@ -8870,24 +8870,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\koneill\\.nuget\\packages\\": {},
+    "C:\\Users\\kyleo\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\koneill\\source\\repos\\Birthday\\Birthday\\Birthday.csproj",
+      "projectUniqueName": "C:\\Users\\kyleo\\Personal Files\\Personal Documents\\Programming\\Projects\\birthdays\\Birthday\\Birthday.csproj",
       "projectName": "Birthday",
-      "projectPath": "C:\\Users\\koneill\\source\\repos\\Birthday\\Birthday\\Birthday.csproj",
-      "packagesPath": "C:\\Users\\koneill\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\koneill\\source\\repos\\Birthday\\Birthday\\obj\\",
+      "projectPath": "C:\\Users\\kyleo\\Personal Files\\Personal Documents\\Programming\\Projects\\birthdays\\Birthday\\Birthday.csproj",
+      "packagesPath": "C:\\Users\\kyleo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kyleo\\Personal Files\\Personal Documents\\Programming\\Projects\\birthdays\\Birthday\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\koneill\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kyleo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

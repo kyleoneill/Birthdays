@@ -9,13 +9,11 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <TextBlock x:Name="pageTitle" Text="Add Birthday" FontSize="40px" HorizontalAlignment="Center" Margin="0,30,0,-30"/>
+        <TextBlock x:Name="pageTitle" Text="Add Birthday" FontSize="40px" HorizontalAlignment="Center" Margin="0,30,0,898"/>
         <HyperlinkButton Content="View Birthdays" Click="HyperlinkButton_Click" FontSize="25px" HorizontalAlignment="Left" Margin="60,175,0,0" VerticalAlignment="Top" />
         <HyperlinkButton Content="Main Page" Click="HyperlinkButton_Click_1" FontSize="25px" HorizontalAlignment="Left" Margin="60,100,0,0" VerticalAlignment="Top" />
         <TextBox Name="Input_Name" Header="Input your name: " PlaceholderText="name" HorizontalAlignment="Left" Margin="404,346,0,606" Width="300"/>
-        <TextBox Name="Input_Date" HorizontalAlignment="Left" Margin="404,428,0,524" Width="300"/>
+        <TextBox Name="Input_Date" Header="Input your birthday: " PlaceholderText="date" HorizontalAlignment="Left" Margin="404,428,0,524" Width="300"/>
         <Button Click="AddData" HorizontalAlignment="Left" Margin="432,554,0,0" VerticalAlignment="Top" Height="40" Width="208">Add</Button>
-        <TextBlock HorizontalAlignment="Left" Margin="300,360,0,0" Text="Name" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="300,450,0,0" Text="Date" TextWrapping="Wrap" VerticalAlignment="Top"/>
     </Grid>
 </Page>
