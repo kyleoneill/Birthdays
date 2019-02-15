@@ -12,5 +12,6 @@
         <TextBlock x:Name="pageTitle" Text="Birthday App" FontSize="40px" HorizontalAlignment="Center" Margin="0,30,0,-30"/>
         <HyperlinkButton Content="Add a Birthday" Click="HyperlinkButton_Click" FontSize="25px" HorizontalAlignment="Left" Margin="120,175,0,0" VerticalAlignment="Top" />
         <HyperlinkButton Content="View Birthdays" Click="HyperlinkButton_Click_1" FontSize="25px" HorizontalAlignment="Left" Margin="120,275,0,0" VerticalAlignment="Top" />
+        <HyperlinkButton Content="Remove Birthday" Click="HyperlinkButton_Click_2" FontSize="25px" HorizontalAlignment="Left" Margin="120,375,0,0" VerticalAlignment="Top" />
     </Grid>
 </Page>

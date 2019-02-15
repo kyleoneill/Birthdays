@@ -44,7 +44,20 @@ namespace Birthday
 
         public static void RemovePerson(string name)
         {
-            //TODO
+            using(SqliteConnection db = new SqliteConnection("Filename=birthday.db"))
+            {
+                db.Open();
+
+                SqliteCommand removeCommand = new SqliteCommand
+                {
+                    Connection = db
+                };
+
+                removeCommand.CommandText = ("DELETE FROM birthdayTable WHERE name=$name;");
+                removeCommand.Parameters.AddWithValue("$name", name);
+                removeCommand.ExecuteReader();
+                db.Close();
+            }
         }
 
         public static List<Person> GetPeople()
@@ -66,5 +79,31 @@ namespace Birthday
             }
             return entries;
         } 
+
+        public static Person GetPerson(string name)
+        {
+            using(SqliteConnection db = new SqliteConnection("Filename=birthday.db"))
+            {
+                db.Open();
+
+                SqliteCommand selectCommand = new SqliteCommand
+                {
+                    Connection = db
+                };
+
+                selectCommand.CommandText = ("SELECT name, birthday FROM birthdayTable WHERE name=$name");
+                selectCommand.Parameters.AddWithValue("$name", name);
+                SqliteDataReader query = selectCommand.ExecuteReader();
+                if(!query.HasRows)
+                {
+                    return new Person { Name = null};
+                }
+                else
+                {
+                    string date = query.GetDateTime(1).ToString("MM/dd/yyyy");
+                    return new Person { Name=query.GetString(0), DateTimeBirthday=query.GetDateTime(1), StringBirthday=date };
+                }
+            }
+        }
     }
 }

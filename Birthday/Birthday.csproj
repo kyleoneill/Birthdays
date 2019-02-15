@@ -128,6 +128,9 @@
     </Compile>
     <Compile Include="person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RemoveBirthday.xaml.cs">
+      <DependentUpon>RemoveBirthday.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewBirthdays.xaml.cs">
       <DependentUpon>ViewBirthdays.xaml</DependentUpon>
     </Compile>
@@ -161,6 +164,10 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RemoveBirthday.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewBirthdays.xaml">
       <SubType>Designer</SubType>
