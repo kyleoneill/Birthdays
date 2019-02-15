@@ -25,6 +25,8 @@ namespace Birthday
         public AddBirthday()
         {
             this.InitializeComponent();
+            DateTime maxYear = new DateTime(2018, 12, 25, 0, 0, 0);
+            Input_Date.MaxYear = new DateTimeOffset(maxYear);
         }
 
         private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
@@ -39,11 +41,13 @@ namespace Birthday
 
         private void AddData(object sender, RoutedEventArgs e)
         {
-            if(Input_Name.Text != "" && Input_Date.Text != "")
+            if(Input_Name.Text != "" && Input_Date.SelectedDate != null)
             {
-                DataAccess.AddPerson(Input_Name.Text, DateTime.Parse(Input_Date.Text));
+                DateTimeOffset date = Input_Date.Date;
+                String stringDate = date.Year + "-" + date.Month + "-" + date.Day + " 00:00:00";
+                DataAccess.AddPerson(Input_Name.Text, DateTime.Parse(stringDate));
                 Input_Name.Text = "";
-                Input_Date.Text = "";
+                Input_Date.SelectedDate = null;
             }
         }
     }
