@@ -17,6 +17,14 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Birthday
 {
+
+    public class Output
+    {
+        public string Name { get; set; }
+        public string Birthday { get; set; }
+        public string DaysRemaining { get; set; }
+    }
+
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
@@ -26,7 +34,17 @@ namespace Birthday
         {
             this.InitializeComponent();
             var personList = DataAccess.GetPeople();
-            Output.ItemsSource = personList;
+
+            List<Output> outputList = new List<Output>();
+            foreach (Person person in personList)
+            {
+                string birthday = person.Birthday.ToString("MM/dd/yyyy");
+                string outputDaysRemaining = GetDaysRemaining(person.Birthday, person.Name);
+                Output output = new Output {Name=person.Name, Birthday=birthday, DaysRemaining=outputDaysRemaining};
+                outputList.Add(output);
+            }
+
+            Output.ItemsSource = outputList;
         }
 
         private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
@@ -42,6 +60,22 @@ namespace Birthday
         private void HyperlinkButton_Click_2(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(RemoveBirthday));
+        }
+
+        private string GetDaysRemaining(DateTime input, string name)
+        {
+            DateTime birthday = DateTime.Parse(input.Month + "/" + input.Day + "/" + DateTime.Now.Year);
+            int daysRemaining = (birthday - DateTime.Now).Days;
+            string output;
+            if(daysRemaining >= 0)
+            {
+                output = daysRemaining + (daysRemaining == 1 ? " day " : " days ") + "left until " + name + "'s birthday.";
+            }
+            else
+            {
+                output = name + "'s birthday has already passed.";
+            }
+            return output;
         }
     }
 }

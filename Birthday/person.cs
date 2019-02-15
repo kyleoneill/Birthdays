@@ -9,7 +9,6 @@ namespace Birthday
     public class Person
     {
         public string Name { get; set; }
-        public string StringBirthday { get; set; }
-        public DateTime DateTimeBirthday { get; set; }
+        public DateTime Birthday { get; set; }
     }
 }

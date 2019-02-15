@@ -72,8 +72,7 @@ namespace Birthday
                 SqliteDataReader query = selectCommand.ExecuteReader();
                 while (query.Read())
                 {
-                    string date = query.GetDateTime(1).ToString("MM/dd/yyyy");
-                    entries.Add(new Person {Name=query.GetString(0), DateTimeBirthday=query.GetDateTime(1) , StringBirthday=date});
+                    entries.Add(new Person {Name=query.GetString(0), Birthday=query.GetDateTime(1)});
                 }
                 db.Close();
             }
@@ -100,8 +99,7 @@ namespace Birthday
                 }
                 else
                 {
-                    string date = query.GetDateTime(1).ToString("MM/dd/yyyy");
-                    return new Person { Name=query.GetString(0), DateTimeBirthday=query.GetDateTime(1), StringBirthday=date };
+                    return new Person { Name=query.GetString(0), Birthday=query.GetDateTime(1)};
                 }
             }
         }
