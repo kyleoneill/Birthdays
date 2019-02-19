@@ -14,7 +14,7 @@
         <HyperlinkButton Content="Main Page" Click="HyperlinkButton_Click_1" FontSize="25px" HorizontalAlignment="Left" Margin="60,100,0,0" VerticalAlignment="Top" />
         <HyperlinkButton Content="Remove Birthday" Click="HyperlinkButton_Click_2" FontSize="25px" HorizontalAlignment="Left" Margin="60,250,0,0" VerticalAlignment="Top" />
         <TextBox Name="Input_Name" Header="Input your name:" PlaceholderText="name" HorizontalAlignment="Left" Margin="404,346,0,606" Width="300"/>
-        <DatePicker Name="Input_Date" Header="Input your birthday:" HorizontalAlignment="Left" Margin="404,428,0,524" Width="300"/>
+        <DatePicker Name="Input_Date" Header="Input your birthday:" YearVisible="False" HorizontalAlignment="Left" Margin="404,428,0,524" Width="300"/>
         <Button Click="AddData" HorizontalAlignment="Left" Margin="432,554,0,0" VerticalAlignment="Top" Height="40" Width="208">Add</Button>
     </Grid>
 </Page>

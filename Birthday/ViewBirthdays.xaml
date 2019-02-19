@@ -13,7 +13,6 @@
         <HyperlinkButton Content="Add a Birthday" Click="HyperlinkButton_Click" FontSize="25px" HorizontalAlignment="Left" Margin="60,175,0,0" VerticalAlignment="Top" />
         <HyperlinkButton Content="Main Page" Click="HyperlinkButton_Click_1" FontSize="25px" HorizontalAlignment="Left" Margin="60,100,0,0" VerticalAlignment="Top" />
         <HyperlinkButton Content="Remove Birthday" Click="HyperlinkButton_Click_2" FontSize="25px" HorizontalAlignment="Left" Margin="60,250,0,0" VerticalAlignment="Top" />
-        <TextBlock Text="Birthdays" HorizontalAlignment="Center" Margin="0, 125, 0, 0"/>
         <ListView Name="Output" Margin="300,150,250,150" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <ListView.ItemTemplate>
                 <DataTemplate>

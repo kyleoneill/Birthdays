@@ -25,8 +25,6 @@ namespace Birthday
         public AddBirthday()
         {
             this.InitializeComponent();
-            DateTime maxYear = new DateTime(2018, 12, 25, 0, 0, 0);
-            Input_Date.MaxYear = new DateTimeOffset(maxYear);
         }
 
         private void HyperlinkButton_Click(object sender, RoutedEventArgs e)

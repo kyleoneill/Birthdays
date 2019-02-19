@@ -33,7 +33,7 @@ namespace Birthday
                     Connection = db
                 };
 
-                string sqliteBirthday = birthday.Year + "-" + birthday.Month + "-" + birthday.Day + " 00:00:00";
+                string sqliteBirthday = "2019-" + birthday.Month + "-" + birthday.Day + " 00:00:00";
                 insertCommand.CommandText = "INSERT INTO birthdayTable (name, birthday) VALUES($name, $date);";
                 insertCommand.Parameters.AddWithValue("$name", name);
                 insertCommand.Parameters.AddWithValue("$date", sqliteBirthday);

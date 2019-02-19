@@ -38,7 +38,7 @@ namespace Birthday
             List<Output> outputList = new List<Output>();
             foreach (Person person in personList)
             {
-                string birthday = person.Birthday.ToString("MM/dd/yyyy");
+                string birthday = person.Birthday.ToString("MMMM dd");
                 string outputDaysRemaining = GetDaysRemaining(person.Birthday, person.Name);
                 Output output = new Output {Name=person.Name, Birthday=birthday, DaysRemaining=outputDaysRemaining};
                 outputList.Add(output);
@@ -73,7 +73,7 @@ namespace Birthday
             }
             else
             {
-                output = name + "'s birthday has already passed.";
+                output = $"{name}'s birthday has already passed.";
             }
             return output;
         }
