@@ -67,9 +67,13 @@ namespace Birthday
             DateTime birthday = DateTime.Parse(input.Month + "/" + input.Day + "/" + DateTime.Now.Year);
             int daysRemaining = (birthday - DateTime.Now).Days;
             string output;
-            if(daysRemaining >= 0)
+            if(daysRemaining > 0)
             {
                 output = daysRemaining + (daysRemaining == 1 ? " day " : " days ") + "left until " + name + "'s birthday.";
+            }
+            else if (daysRemaining == 0)
+            {
+                output = $"{name}'s birthday is today.";
             }
             else
             {
