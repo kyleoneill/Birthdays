@@ -27,21 +27,6 @@ namespace Birthday
             this.InitializeComponent();
         }
 
-        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(ViewBirthdays));
-        }
-
-        private void HyperlinkButton_Click_1(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(MainPage));
-        }
-
-        private void HyperlinkButton_Click_2(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(RemoveBirthday));
-        }
-
         private void AddData(object sender, RoutedEventArgs e)
         {
             if(Input_Name.Text != "" && Input_Date.SelectedDate != null)
@@ -51,6 +36,35 @@ namespace Birthday
                 DataAccess.AddPerson(Input_Name.Text, DateTime.Parse(stringDate));
                 Input_Name.Text = "";
                 Input_Date.SelectedDate = null;
+            }
+        }
+        private void NavView_Loaded(object sender, RoutedEventArgs e)
+        {
+            NavView.SelectedItem = NavView.MenuItems[0];
+        }
+
+        private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
+        {
+            if (args.InvokedItem != null)
+            {
+                switch (args.InvokedItem)
+                {
+                    case "Main Page":
+                        this.Frame.Navigate(typeof(MainPage));
+                        break;
+
+                    case "Add Birthday":
+                        this.Frame.Navigate(typeof(AddBirthday));
+                        break;
+
+                    case "Remove Birthday":
+                        this.Frame.Navigate(typeof(RemoveBirthday));
+                        break;
+
+                    case "View Birthdays":
+                        this.Frame.Navigate(typeof(ViewBirthdays));
+                        break;
+                }
             }
         }
     }

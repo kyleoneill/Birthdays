@@ -26,20 +26,34 @@ namespace Birthday
         {
             this.InitializeComponent();
         }
-
-        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+        private void NavView_Loaded(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(AddBirthday));
+            NavView.SelectedItem = NavView.MenuItems[0];
         }
 
-        private void HyperlinkButton_Click_1(object sender, RoutedEventArgs e)
+        private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
         {
-            this.Frame.Navigate(typeof(ViewBirthdays));
-        }
+            if (args.InvokedItem != null)
+            {
+                switch (args.InvokedItem)
+                {
+                    case "Main Page":
+                        this.Frame.Navigate(typeof(MainPage));
+                        break;
 
-        private void HyperlinkButton_Click_2(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(RemoveBirthday));
+                    case "Add Birthday":
+                        this.Frame.Navigate(typeof(AddBirthday));
+                        break;
+
+                    case "Remove Birthday":
+                        this.Frame.Navigate(typeof(RemoveBirthday));
+                        break;
+
+                    case "View Birthdays":
+                        this.Frame.Navigate(typeof(ViewBirthdays));
+                        break;
+                }
+            }
         }
     }
 }

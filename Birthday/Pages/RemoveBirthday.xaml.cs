@@ -27,21 +27,6 @@ namespace Birthday
             this.InitializeComponent();
         }
 
-        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(AddBirthday));
-        }
-
-        private void HyperlinkButton_Click_1(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(MainPage));
-        }
-
-        private void HyperlinkButton_Click_2(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(ViewBirthdays));
-        }
-
         private void RemoveData(object sender, RoutedEventArgs e)
         {
             Person person = DataAccess.GetPerson(Input_Name.Text);
@@ -55,6 +40,35 @@ namespace Birthday
                 Status.Text = "Person " + Input_Name.Text + " has been deleted.";
             }
             Input_Name.Text = "";
+        }
+        private void NavView_Loaded(object sender, RoutedEventArgs e)
+        {
+            NavView.SelectedItem = NavView.MenuItems[0];
+        }
+
+        private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
+        {
+            if (args.InvokedItem != null)
+            {
+                switch (args.InvokedItem)
+                {
+                    case "Main Page":
+                        this.Frame.Navigate(typeof(MainPage));
+                        break;
+
+                    case "Add Birthday":
+                        this.Frame.Navigate(typeof(AddBirthday));
+                        break;
+
+                    case "Remove Birthday":
+                        this.Frame.Navigate(typeof(RemoveBirthday));
+                        break;
+
+                    case "View Birthdays":
+                        this.Frame.Navigate(typeof(ViewBirthdays));
+                        break;
+                }
+            }
         }
     }
 }

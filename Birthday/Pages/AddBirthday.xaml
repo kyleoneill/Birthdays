@@ -10,9 +10,14 @@
 
     <Grid>
         <TextBlock x:Name="pageTitle" Text="Add Birthday" FontSize="40px" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,30,0,0"/>
-        <HyperlinkButton Content="View Birthdays" Click="HyperlinkButton_Click" FontSize="25px" HorizontalAlignment="Left" Margin="60,175,0,0" VerticalAlignment="Top" />
-        <HyperlinkButton Content="Main Page" Click="HyperlinkButton_Click_1" FontSize="25px" HorizontalAlignment="Left" Margin="60,100,0,0" VerticalAlignment="Top" />
-        <HyperlinkButton Content="Remove Birthday" Click="HyperlinkButton_Click_2" FontSize="25px" HorizontalAlignment="Left" Margin="60,250,0,0" VerticalAlignment="Top" />
+        <NavigationView x:Name="NavView" Loaded="NavView_Loaded" ItemInvoked="NavView_ItemInvoked" IsSettingsVisible="False">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Tag="MainPage" Content="Main Page"/>
+                <NavigationViewItem Tag="AddBirthday" Content="Add Birthday"/>
+                <NavigationViewItem Tag="RemoveBirthday" Content="Remove Birthday"/>
+                <NavigationViewItem Tag="ViewBirthdays" Content="View Birthdays"/>
+            </NavigationView.MenuItems>
+        </NavigationView>
         <Grid>
             <TextBox Name="Input_Name" Header="Input your name:" PlaceholderText="name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="400,200,0,0" Width="300"/>
             <DatePicker Name="Input_Date" Header="Input your birthday:" YearVisible="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="400,300,0,0" Width="300"/>

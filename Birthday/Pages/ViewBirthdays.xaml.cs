@@ -5,12 +5,13 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -47,21 +48,6 @@ namespace Birthday
             Output.ItemsSource = outputList;
         }
 
-        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(AddBirthday));
-        }
-
-        private void HyperlinkButton_Click_1(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(MainPage));
-        }
-
-        private void HyperlinkButton_Click_2(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(RemoveBirthday));
-        }
-
         private string GetDaysRemaining(DateTime input, string name)
         {
             DateTime birthday = DateTime.Parse(input.Month + "/" + input.Day + "/" + DateTime.Now.Year);
@@ -80,6 +66,36 @@ namespace Birthday
                 output = $"{name}'s birthday has already passed.";
             }
             return output;
+        }
+
+        private void NavView_Loaded(object sender, RoutedEventArgs e)
+        {
+            NavView.SelectedItem = NavView.MenuItems[0];
+        }
+
+        private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
+        {
+            if(args.InvokedItem != null)
+            {
+                switch (args.InvokedItem)
+                {
+                    case "Main Page":
+                        this.Frame.Navigate(typeof(MainPage));
+                        break;
+
+                    case "Add Birthday":
+                        this.Frame.Navigate(typeof(AddBirthday));
+                        break;
+
+                    case "Remove Birthday":
+                        this.Frame.Navigate(typeof(RemoveBirthday));
+                        break;
+
+                    case "View Birthdays":
+                        this.Frame.Navigate(typeof(ViewBirthdays));
+                        break;
+                }
+            }
         }
     }
 }
