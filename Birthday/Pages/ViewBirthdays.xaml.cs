@@ -51,13 +51,18 @@ namespace Birthday
         private string GetDaysRemaining(DateTime input, string name)
         {
             DateTime birthday = DateTime.Parse(input.Month + "/" + input.Day + "/" + DateTime.Now.Year);
-            int daysRemaining = (birthday - DateTime.Now).Days;
+            TimeSpan difference = birthday - DateTime.Now;
             string output;
-            if(daysRemaining > 0)
+            if(difference.Days > 0 || difference.Hours > 0)
             {
+                int daysRemaining = difference.Days;
+                if(difference.Days == 0)
+                {
+                    daysRemaining = 1;
+                }
                 output = daysRemaining + (daysRemaining == 1 ? " day " : " days ") + "left until " + name + "'s birthday.";
             }
-            else if (daysRemaining == 0)
+            else if (difference.Days == 0 && difference.Hours <= 0)
             {
                 output = $"{name}'s birthday is today.";
             }
