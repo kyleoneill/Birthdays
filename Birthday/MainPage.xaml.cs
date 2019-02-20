@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Xaml.Media.Animation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -38,19 +39,19 @@ namespace Birthday
                 switch (args.InvokedItem)
                 {
                     case "Main Page":
-                        this.Frame.Navigate(typeof(MainPage));
+                        this.Frame.Navigate(typeof(MainPage), null, new SuppressNavigationTransitionInfo());
                         break;
 
                     case "Add Birthday":
-                        this.Frame.Navigate(typeof(AddBirthday));
+                        this.Frame.Navigate(typeof(AddBirthday), null, new SuppressNavigationTransitionInfo());
                         break;
 
                     case "Remove Birthday":
-                        this.Frame.Navigate(typeof(RemoveBirthday));
+                        this.Frame.Navigate(typeof(RemoveBirthday), null, new SuppressNavigationTransitionInfo());
                         break;
 
                     case "View Birthdays":
-                        this.Frame.Navigate(typeof(ViewBirthdays));
+                        this.Frame.Navigate(typeof(ViewBirthdays), null, new SuppressNavigationTransitionInfo());
                         break;
                 }
             }

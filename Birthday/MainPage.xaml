@@ -9,13 +9,13 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <TextBlock x:Name="pageTitle" Text="Birthday App" FontSize="40px" HorizontalAlignment="Center" Margin="0,30,0,-30"/>
-        <NavigationView x:Name="NavView" Loaded="NavView_Loaded" ItemInvoked="NavView_ItemInvoked" IsSettingsVisible="False">
+        <TextBlock x:Name="pageTitle" Text="Birthday App" FontSize="40px" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50,0,0"/>
+        <NavigationView x:Name="NavView" Loaded="NavView_Loaded" ItemInvoked="NavView_ItemInvoked" IsSettingsVisible="False" PaneDisplayMode="Top">
             <NavigationView.MenuItems>
-                <NavigationViewItem Tag="MainPage" Content="Main Page"/>
-                <NavigationViewItem Tag="AddBirthday" Content="Add Birthday"/>
-                <NavigationViewItem Tag="RemoveBirthday" Content="Remove Birthday"/>
-                <NavigationViewItem Tag="ViewBirthdays" Content="View Birthdays"/>
+                <NavigationViewItem Tag="MainPage" Content="Main Page" Icon="Home"/>
+                <NavigationViewItem Tag="AddBirthday" Content="Add Birthday" Icon="Add"/>
+                <NavigationViewItem Tag="RemoveBirthday" Content="Remove Birthday" Icon="Clear"/>
+                <NavigationViewItem Tag="ViewBirthdays" Content="View Birthdays" Icon="View"/>
             </NavigationView.MenuItems>
         </NavigationView>
     </Grid>
