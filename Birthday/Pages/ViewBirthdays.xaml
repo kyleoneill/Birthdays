@@ -18,18 +18,16 @@
                 <NavigationViewItem Tag="ViewBirthdays" Content="View Birthdays" Icon="View"/>
             </NavigationView.MenuItems>
         </NavigationView>
-        <ListView Name="Output" Margin="350,150,50,50">
+        <ListView Name="Output" Margin="50,150,50,50" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid>
-                        <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                            <TextBlock Text="{Binding Name}"/>
-                            <TextBlock Text=" - " />
-                            <TextBlock Text="{Binding Birthday}"/>
-                            <TextBlock Text=" - " />
-                            <TextBlock Text="{Binding DaysRemaining}" />
-                        </StackPanel>
-                    </Grid>
+                    <StackPanel Orientation="Horizontal" Spacing="5">
+                        <TextBlock Text="{Binding Name}"/>
+                        <TextBlock Text="-"/>
+                        <TextBlock Text="{Binding Birthday}"/>
+                        <TextBlock Text="-"/>
+                        <TextBlock Text="{Binding OutString}"/>
+                    </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

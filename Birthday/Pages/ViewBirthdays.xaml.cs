@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -19,11 +20,19 @@ using Windows.UI.Xaml.Navigation;
 namespace Birthday
 {
 
-    public class Output
+    public class OutputPerson: IComparable<OutputPerson>
     {
         public string Name { get; set; }
         public string Birthday { get; set; }
-        public string DaysRemaining { get; set; }
+        public string OutString { get; set; }
+        public TimeSpan DaysRemaining { get; set; }
+        public int CompareTo(OutputPerson comparePerson)
+        {
+            if (comparePerson == null)
+                return 1;
+            else
+                return this.DaysRemaining.Days.CompareTo(comparePerson.DaysRemaining.Days);
+        }
     }
 
     /// <summary>
@@ -36,15 +45,16 @@ namespace Birthday
             this.InitializeComponent();
             var personList = DataAccess.GetPeople();
 
-            List<Output> outputList = new List<Output>();
+            List<OutputPerson> outputList = new List<OutputPerson>();
+            //ObservableCollection<OutputPerson> outputList = new ObservableCollection<OutputPerson>();
             foreach (Person person in personList)
             {
                 string birthday = person.Birthday.ToString("MMMM dd");
                 string outputDaysRemaining = GetDaysRemaining(person.Birthday, person.Name);
-                Output output = new Output {Name=person.Name, Birthday=birthday, DaysRemaining=outputDaysRemaining};
+                OutputPerson output = new OutputPerson {Name=person.Name, Birthday=birthday, OutString=outputDaysRemaining, DaysRemaining=person.Birthday-DateTime.Now};
                 outputList.Add(output);
             }
-
+            outputList.Sort();
             Output.ItemsSource = outputList;
         }
 

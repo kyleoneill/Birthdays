@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <TextBlock x:Name="pageTitle" Text="Remove Birthdays" FontSize="40px" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="pageTitle" Text="Remove Person" FontSize="40px" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top"/>
         <NavigationView x:Name="NavView" Loaded="NavView_Loaded" ItemInvoked="NavView_ItemInvoked" IsSettingsVisible="False" PaneDisplayMode="Top">
             <NavigationView.MenuItems>
                 <NavigationViewItem Tag="MainPage" Content="Main Page" Icon="Home"/>
